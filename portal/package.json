@@ -1,0 +1,15 @@
+{
+  "name": "portal",
+  "version": "1.0.0",
+  "description": "My Portal app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "express": "^4.15.3"
+  }
+}
