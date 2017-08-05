@@ -12,13 +12,13 @@ var path = require('path');
 // This responds with "Hello World" on the homepage
 app.get('/', function (req, res) {
    console.log("Got a GET request for the homepage");
-   //res.render('index', { title: 'Hey', message: 'Hello there!' })
-  res.sendFile(path.join(__dirname + '/pages/home.html'));
+   res.render('index', { title: 'Hey', message: 'Hello there!' })
+  //res.sendFile(path.join(__dirname + '/pages/home.html'));
 })
 app.get('/home.html', function (req, res) {
    console.log("Got a GET request for the homepage");
-  //res.sendFile(path.join(__dirname + '/pages/home.html'));
-  res.render('home', { title: 'Hey', message: 'Hello there!' })
+  res.sendFile(path.join(__dirname + '/pages/home.html'));
+ // res.render('home', { title: 'Hey', message: 'Hello there!' })
 })
 
 
@@ -45,7 +45,16 @@ app.get('/register.html', function (req, res) {
 	res.sendFile(path.join(__dirname + '/pages/register.html'));
    
 })
-
+app.get('/single-product.html', function (req, res) {
+   console.log("Got a GET request for /login " +path.join(__dirname + '/pages/register.html'));
+  res.sendFile(path.join(__dirname + '/pages/single-product.html'));
+   
+})
+app.get('/cart.html', function (req, res) {
+   console.log("Got a GET request for /login " +path.join(__dirname + '/pages/register.html'));
+  res.sendFile(path.join(__dirname + '/pages/cart.html'));
+   
+})
 // This responds a GET request for abcd, abxcd, ab123cd, and so on
 app.get('/ab*cd', function(req, res) {   
    console.log("Got a GET request for /ab*cd");
