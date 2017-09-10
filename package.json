@@ -4,13 +4,16 @@
   "description": "My Portal app",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js"
-},
+    "start": "node index.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.5",
+    "body-parser": "^1.18.0",
     "express": "^4.15.3",
+    "express-session": "^1.15.5",
+    "mongodb": "^2.2.31",
     "pug": "^2.0.0-rc.3"
   }
 }

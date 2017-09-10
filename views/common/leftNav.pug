@@ -1,0 +1,105 @@
+.col-md-3.col-sm-4.col-xs-12.left_sidebar1
+            #left_part
+              .bs-example
+                .panel-group#accordion
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne') Categories
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-down.pull-right
+                    #collapseOne.panel-collapse.collapse.in
+                      .panel-body
+                        .infoBoxContents
+                          a(href='product.html') Category One
+                          |  (94)
+                          br
+                          a(href='product.html') Category Two
+                          |  (9)
+                          br
+                          a(href='product.html') Category Three
+                          |  (5)
+                          br
+                          a(href='product.html') Category Four
+                          |  (6)
+                          br
+                          a(href='product.html') Category Five
+                          |  (94)
+                          br
+                          a(href='product.html') Category Six
+                          |  (94)
+                          br
+                          a(href='product.html') Category Seven
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo') What's New?
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right.accordan_plus
+                    #collapseTwo.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContainer
+                          .infoBoxHeading
+                            a(href='#') What's New?
+                          .infoBoxContents#sidebar
+                            div
+                              a(href='single-product.html')
+                                img.img-responsive(src='images/img4.jpg')
+                            a(href='single-product.html') Lorem Simply
+                            br
+                            | €21.00
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree') Information
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right
+                    #collapseThree.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContents
+                          a(href='#') Shipping & Returns
+                          br
+                          a(href='#') Privacy Notice
+                          br
+                          a(href='#') Conditions of Use
+                          br
+                          a(href='#') Contact Us
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFour') Bestsellers
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFour')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right
+                    #collapseFour.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContents#sidebar
+                          a(href='single-product.html')
+                            img.img-responsive(src='images/img4.jpg')
+                          a(href='single-product.html') Lorem Big Block
+                          br
+                          del
+                          span.productSpecialPrice €21.00
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFive') Specials
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFive')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right
+                    #collapseFive.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContents#sidebar
+                          a(href='single-product.html')
+                            img.img-responsive(src='images/img6.jpg')
+                          a(href='single-product.html') Lorem Big Block
+                          br
+                          del
+                          span.productSpecialPrice €21.00
+            script.
+             function toggleChevron(e) {
+                                        $(e.target)
+                                        .prev('.panel-heading')
+                                        .find("i.indicator")
+                                        .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+                            }
+                            $('#accordion').on('hidden.bs.collapse', toggleChevron);
+                            $('#accordion').on('shown.bs.collapse', toggleChevron);

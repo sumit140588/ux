@@ -1,0 +1,146 @@
+doctype html
+html
+  include common/head.pug
+  body
+    include common/header
+    include common/searchbar
+    #site_content
+      .container
+        .row
+          aside.col-sm-3.hidden-xs#column-left
+            .list-group
+              a.list-group-item(href='login.html') Login
+              a.list-group-item(href='#') Register
+              a.list-group-item(href='#') Forgotten Password
+              a.list-group-item(href='#') My Account
+              a.list-group-item(href='#') Address Book
+              a.list-group-item(href='#') Wish List
+              a.list-group-item(href='#') Order History
+              a.list-group-item(href='#') Downloads
+              a.list-group-item(href='#') Recurring payments
+              a.list-group-item(href='#') Reward Points
+              a.list-group-item(href='#') Returns
+              a.list-group-item(href='#') Transactions
+              a.list-group-item(href='#') Newsletter
+          .col-sm-9#content
+            .breadcrumbs
+              a(href='home.html')
+                i.fa.fa-home
+              a(href='#') Register
+            h1 My Account Information
+            p
+              small
+                strong.define_note
+              | If you already have an account with us, please login at the
+              a(href='login.html') login page
+              | .
+            form.form-horizontal
+              .contentText
+                fieldset#account
+                  h1 Your Personal Details
+                  .form-group.required(style='display: none')
+                    label.col-sm-2.control-label Customer Group
+                    .col-sm-10
+                      .radio
+                        label
+                          input(type='radio', checked='', value='1', name='customer_group_id')
+                          |  Default
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-firstname') First Name
+                    .col-sm-10
+                      input.form-control#input-firstname(type='text', placeholder='First Name', name='firstname')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-lastname') Last Name
+                    .col-sm-10
+                      input.form-control#input-lastname(type='text', placeholder='Last Name', name='lastname')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-email') E-Mail
+                    .col-sm-10
+                      input.form-control#input-email(type='email', placeholder='E-Mail', name='email')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-telephone') Telephone
+                    .col-sm-10
+                      input.form-control#input-telephone(type='tel', placeholder='Telephone', name='telephone')
+                  .form-group
+                    label.col-sm-2.control-label(for='input-fax') Fax
+                    .col-sm-10
+                      input.form-control#input-fax(type='text', placeholder='Fax', name='fax')
+                fieldset#address
+                  h1 Your Address
+                  .form-group
+                    label.col-sm-2.control-label(for='input-company') Company
+                    .col-sm-10
+                      input.form-control#input-company(type='text', placeholder='Company', name='company')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-address-1') Address 1
+                    .col-sm-10
+                      input.form-control#input-address-1(type='text', placeholder='Address 1', name='address_1')
+                  .form-group
+                    label.col-sm-2.control-label(for='input-address-2') Address 2
+                    .col-sm-10
+                      input.form-control#input-address-2(type='text', placeholder='Address 2', name='address_2')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-city') City
+                    .col-sm-10
+                      input.form-control#input-city(type='text', placeholder='City', name='city')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-postcode') Post Code
+                    .col-sm-10
+                      input.form-control#input-postcode(type='text', placeholder='Post Code', name='postcode')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-country') Country
+                    .col-sm-10
+                      select.form-control#input-country(name='country_id')
+                        option(value='') --- Please Select ---
+                        option(value='244') India
+                        option(value='1') Afghanistan
+                        option(value='2') Albania
+                        option(value='3') Algeria
+                        option(value='4') American Samoa
+                        option(value='5') Andorra
+                        option(value='6') Angola
+                        option(value='7') Anguilla
+                        option(value='8') Antarctica
+                        option(value='9') Antigua and Barbuda
+                        option(value='10') Argentina
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-zone') Region / State
+                    .col-sm-10
+                      select.form-control#input-zone(name='zone_id')
+                        option(value='') --- Please Select ---
+                        option(value='3513') Aberdeen
+                        option(value='3514') Aberdeenshire
+                        option(value='3515') Anglesey
+                        option(value='3516') Angus
+                        option(value='3517') Argyll and Bute
+                        option(value='3518') Bedfordshire
+                fieldset
+                  h1 Your Password
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-password') Password
+                    .col-sm-10
+                      input.form-control#input-password(type='password', placeholder='Password', name='password')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-confirm') Password Confirm
+                    .col-sm-10
+                      input.form-control#input-confirm(type='password', placeholder='Password Confirm', name='confirm')
+                fieldset
+                  h1 Newsletter
+                  .form-group
+                    label.col-sm-2.control-label Subscribe
+                    .col-sm-10
+                      label.radio-inline
+                        input(type='radio', value='1', name='newsletter')
+                        |  Yes
+                      label.radio-inline
+                        input(type='radio', checked='', value='0', name='newsletter')
+                        |  No
+                .buttons
+                  .pull-right
+                    | I have read and agree to the
+                    a.agree(href='#')
+                      b Privacy Policy
+                    input(type='checkbox', value='1', name='agree')
+                    |    
+                    input.btn.btn-primary.reg_button(type='submit', value='Continue')
+    include common/footer

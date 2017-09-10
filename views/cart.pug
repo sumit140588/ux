@@ -1,0 +1,162 @@
+doctype html
+html
+  include common/head.pug
+  body
+    include common/header
+    include common/searchbar
+    
+                //                                                  <span class="input-group-addon" style="border-radius: 0px 20px 20px 0; padding: 0 15px">
+                                                                                      <a href="#" style="color:white" id="testt">
+                                                                                          <span class="glyphicon glyphicon-chevron-down"></span>
+                                                                                      </a>
+                                                                                  </span>
+    .main-content
+      .container.cart-block-style
+        .breadcrumbs
+          a(href='home.html')
+            i.fa.fa-home
+          a(href='#') Shopping Cart
+        .contentText
+          h1 Shopping Cart  (0.00kg)
+        form
+          .table-responsive.margin-top
+            table.table.table-bordered
+              thead
+                tr
+                  td.text-center
+                  td.text-left PRODUCT NAME
+                  td.text-left MODEL
+                  td.text-left QUANTITY
+                  td.text-right UNIT PRICE
+                  td.text-right TOTAL
+              tbody
+                tr
+                  td.text-center
+                    a(href='single-product.html')
+                      img(title='ana', src='images/img1.png', style='width: 100px; height: 80px')
+                  td.text-left
+                    a(href='single-product.html') Anabel
+                    br
+                    small Select: Blue
+                    br
+                    small Reward Points: 200
+                  td.text-left
+                    br
+                    | Product 3
+                  td.text-left
+                    br
+                    .input-group.btn-block(style='max-width: 200px')
+                      input.form-control.input-sm(type='text', size='1', value='1')
+                      span.input-group-btn
+                        button.btn.btn-primary(type='submit', data-original-title='Update')
+                          i.fa.fa-refresh
+                        button.btn.btn-danger(type='button', data-original-title='Remove')
+                          i.fa.fa-times-circle
+                  td.text-right
+                    br
+                    | $98.00
+                  td.text-right
+                    br
+                    | $98.00
+        h2 What would you like to do next?
+        p Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.
+        #accordion.panel-group
+          .panel.panel-default
+            .panel-heading
+              h4.panel-title
+                a.accordion-toggle(data-parent='#accordion', data-toggle='collapse', href='#collapse-coupon', aria-expanded='true')
+                  | Use Coupon Code
+                  i.fa.fa-caret-down
+            .panel-collapse.collapse.in#collapse-coupon(aria-expanded='true')
+              .panel-body
+                label.col-sm-2.control-label(for='input-coupon') Enter your coupon Code here
+                .input-group
+                  input.form-control#input-coupon(type='text', placeholder='Enter your coupon Code here', name='coupon')
+                  span.input-group-btn
+                    input.btn.btn-primary#button-coupon(type='button', value='Apply Coupon')
+          .panel.panel-default
+            .panel-heading
+              h4.panel-title
+                a.accordion-toggle.collapsed(data-parent='#accordion', data-toggle='collapse', href='#collapse-shipping', aria-expanded='false')
+                  | Estimate Shipping & Taxes
+                  i.fa.fa-caret-down
+            .panel-collapse.collapse#collapse-shipping(style='height: 0px', aria-expanded='false')
+              .panel-body
+                p Enter your destination to get a shipping estimate.
+                .form-horizontal
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-country') Country
+                    .col-sm-10
+                      select.form-control#input-country(name='country_id')
+                        option(value='') --- Please Select ---
+                        option(value='244') India
+                        option(value='1') Afghanistan
+                        option(value='2') Albania
+                        option(value='3') Algeria
+                        option(value='4') American Samoa
+                        option(value='5') Andorra
+                        option(value='6') Angola
+                        option(value='7') Anguilla
+                        option(value='8') Antarctica
+                        option(value='9') Antigua and Barbuda
+                        option(value='10') Argentina
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-zone') Region / State
+                    .col-sm-10
+                      select.form-control#input-zone(name='zone_id')
+                        option(value='') --- Please Select ---
+                        option(value='3513') Aberdeen
+                        option(value='3514') Aberdeenshire
+                        option(value='3515') Anglesey
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-postcode') Post Code
+                    .col-sm-10
+                      input.form-control#input-postcode(type='text', placeholder='Post Code', name='postcode')
+                  button.btn.btn-primary#button-quote(type='button') Get Quotes
+          .panel.panel-default
+            .panel-heading
+              h4.panel-title
+                a.accordion-toggle(data-parent='#accordion', data-toggle='collapse', href='#collapse-voucher')
+                  | Use Gift Certificate
+                  i.fa.fa-caret-down
+            .panel-collapse.collapse#collapse-voucher
+              .panel-body
+                label.col-sm-2.control-label(for='input-voucher') Enter your gift certificate code here
+                .input-group
+                  input.form-control#input-voucher(type='text', placeholder='Enter your gift certificate code here', name='voucher')
+                  span.input-group-btn
+                    input.btn.btn-primary#button-voucher(type='submit', value='Apply Gift Certificate')
+        br
+        .row
+          .col-sm-4.col-sm-offset-8
+            strong(style='font-size: 30px;float: right') Pricing Details
+            table.table.table-bordered
+              tbody
+                tr
+                  td.text-right
+                    strong Sub-Total:
+                  td.text-right $80.00
+                tr
+                  td.text-right Coupon Code:
+                  td.text-right $0
+                tr
+                  td.text-right Gift Voucher:
+                  td.text-right $0
+                tr
+                  td.text-right Eco Tax (-2.00):
+                  td.text-right $2.00
+                tr
+                  td.text-right VAT (20%):
+                  td.text-right $16.00
+                tr
+                  td.text-right
+                    strong Order Total:
+                  td.text-right $98.00
+        .buttons
+          .pull-left
+            a.btn.btn-default(href='product.html')
+              i.fa.fa-caret-right
+              |  Continue Shopping
+          .pull-right
+            a.btn.btn-primary.reg_button(href='checkout.html') Checkout
+    include common/footer

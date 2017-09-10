@@ -1,0 +1,295 @@
+doctype html
+html
+  include common/head.pug
+  body
+    include common/header
+    include common/searchbar
+    #site_content
+      .container
+        .row
+          .col-md-3.col-sm-4.col-xs-12.left_sidebar1
+            #left_part
+              .bs-example
+                .panel-group#accordion
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne') Categories
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-down.pull-right
+                    #collapseOne.panel-collapse.collapse.in
+                      .panel-body
+                        .infoBoxContents
+                          a(href='product.html') Category One
+                          |  (94)
+                          br
+                          a(href='product.html') Category Two
+                          |  (9)
+                          br
+                          a(href='product.html') Category Three
+                          |  (5)
+                          br
+                          a(href='product.html') Category Four
+                          |  (6)
+                          br
+                          a(href='product.html') Category Five
+                          |  (94)
+                          br
+                          a(href='product.html') Category Six
+                          |  (94)
+                          br
+                          a(href='product.html') Category Seven
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo') What's New?
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right.accordan_plus
+                    #collapseTwo.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContainer
+                          .infoBoxHeading
+                            a(href='#') What's New?
+                          .infoBoxContents#sidebar
+                            div
+                              a(href='single-product.html')
+                                img.img-responsive(src='images/img4.jpg')
+                            a(href='single-product.html') Lorem Simply
+                            br
+                            | €21.00
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree') Information
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right
+                    #collapseThree.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContents
+                          a(href='#') Shipping & Returns
+                          br
+                          a(href='#') Privacy Notice
+                          br
+                          a(href='#') Conditions of Use
+                          br
+                          a(href='#') Contact Us
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFour') Bestsellers
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFour')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right
+                    #collapseFour.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContents#sidebar
+                          a(href='single-product.html')
+                            img.img-responsive(src='images/img4.jpg')
+                          a(href='single-product.html') Lorem Big Block
+                          br
+                          del
+                          span.productSpecialPrice €21.00
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFive') Specials
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFive')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right
+                    #collapseFive.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContents#sidebar
+                          a(href='single-product.html')
+                            img.img-responsive(src='images/img6.jpg')
+                          a(href='single-product.html') Lorem Big Block
+                          br
+                          del
+                          span.productSpecialPrice €21.00
+            script function toggleChevron(e) {
+                                $(e.target)
+                                        .prev('.panel-heading')
+                                        .find("i.indicator")
+                                        .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+                            }
+                            $('#accordion').on('hidden.bs.collapse', toggleChevron);
+                            $('#accordion').on('shown.bs.collapse', toggleChevron);
+          .col-md-9.col-sm-8.col-xs-12#content
+            .breadcrumbs
+              a(href='home.html')
+                i.fa.fa-home
+              a(href='') Lorem
+            .row
+              .col-sm-6
+                ul.thumbnails
+                  li
+                    a.thumbnail.fix-box(href='#')
+                      img.changeimg(src='images/img21.jpg')
+                  li.image-additional
+                    a.thumbnail(title='Dianabol')
+                      img.galleryimg(src='images/img21.jpg')
+                  li.image-additional
+                    a.thumbnail(title='Proviron')
+                      img.galleryimg(src='images/img22.jpg')
+              .col-sm-6
+                .btn-group
+                  button.btn.btn-default.mr_5(type='button')
+                    i.fa.fa-heart
+                  button.btn.btn-default(type='button')
+                    i.fa.fa-exchange
+                h1(style='color: #39baf0') Lorem
+                ul.list-unstyled.product-section
+                  li
+                    span Product Code:
+                    | SAM1
+                  li
+                    span Reward Points:
+                    | 1000
+                  li
+                    span Availability:
+                    span.check-stock Pre-Order
+                ul.list-unstyled
+                  li
+                    h2 €241.99
+                  li Ex Tax: €199.99
+                #product
+                  .form-group
+                    label.control-label(for='input-quantity') Qty
+                    input.form-control#input-quantity(type='text', size='2', value='1', name='quantity')
+                    |  
+                    input(type='hidden', value='49', name='product_id')
+                    br
+                    a.btn.btn-primary.btn-lg.btn-block.reg_button(href='cart.html')
+                      i.fa.fa-shopping-cart
+                      | BUY NOW!
+                .rating
+                  p
+                    span.fa.fa-stack
+                      i.fa.fa-star-o.fa-stack-1x
+                    span.fa.fa-stack
+                      i.fa.fa-star-o.fa-stack-1x
+                    span.fa.fa-stack
+                      i.fa.fa-star-o.fa-stack-1x
+                    span.fa.fa-stack
+                      i.fa.fa-star-o.fa-stack-1x
+                    span.fa.fa-stack
+                      i.fa.fa-star-o.fa-stack-1x
+                    a(href='') 0 reviews
+                    | /
+                    a(href='') Write a review
+                  hr
+            .row
+              .col-xs-12
+                ul.nav.nav-tabs
+                  li
+                    a(data-toggle='tab', href='#tab-description', aria-expanded='false') Description
+                  li.active
+                    a(data-toggle='tab', href='#tab-review', aria-expanded='true') Reviews (0)
+                .tab-content
+                  #tab-description.tab-pane
+                    .row
+                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur metus leo, dignissim vitae bibendum et, pretium id nulla. Nulla laoreet dapibus cursus. Sed rhoncus bibendum neque non varius. Sed cursus ex id imperdiet tincidunt. Vestibulum vel lacus vel lectus vulputate condimentum pharetra ac mauris. Vivamus dictum justo in est maximus, a pretium neque sodales.
+                  #tab-review.tab-pane.active
+                    form#form-review.form-horizontal
+                      h2 Write a review
+                      .form-group.required
+                        .col-sm-12
+                          label.control-label(for='input-name') Your Name
+                          input.form-control#input-name(type='text', name='name')
+                      .form-group.required
+                        .col-sm-12
+                          label.control-label(for='input-review') Your Review
+                          textarea.form-control#input-review(rows='5', name='text')
+                          .help-block
+                            span.text-danger Note:
+                            | HTML is not translated!
+                      .form-group.required
+                        .col-sm-12
+                          label.control-label Rating
+                          |     Bad  
+                          input(type='radio', value='1', name='rating')
+                          |    
+                          input(type='radio', value='2', name='rating')
+                          |    
+                          input(type='radio', value='3', name='rating')
+                          |    
+                          input(type='radio', value='4', name='rating')
+                          |    
+                          input(type='radio', value='5', name='rating')
+                          |   Good
+                      .buttons.clearfix
+                        .pull-right
+                          button.btn.btn-primary.reg_button#button-review(type='button')
+                            i.fa.fa-caret-right
+                            |   Continue
+            .rel-product
+              .infoBoxHeading
+                a Related Product
+              .row.product-layout_width
+                .product-layout.col-md-4.col-sm-6.col-xs-12
+                  .product-thumb-height
+                    .product-thumb.transition
+                      ul
+                        li.li_product_image
+                          .image
+                            a(href='single-product.html')
+                              img.img-responsive(src='images/img16.jpg', width='200', height='200')
+                        li.li_product_price
+                          span.old_price1
+                          span.new_price1 €159.00
+                          span.saving1
+                        li
+                        li.li_product_desc
+                          .caption
+                            p Lorem Ipsum is simply dummy text of the printing
+                        li.li_product_buy_button
+                          a.btn.btn-default#but(href='cart.html', role='button') Buy Now!
+                          .pull-right
+                            button.btn.btn-primary.wish_button(type='button')
+                              i.fa.fa-heart
+                            button.btn.btn-primary.wish_button(type='button')
+                              i.fa.fa-exchange
+                .product-layout.col-md-4.col-sm-6.col-xs-12
+                  .product-thumb-height
+                    .product-thumb.transition
+                      ul
+                        li.li_product_image
+                          .image
+                            a(href='single-product.html')
+                              img.img-responsive(src='images/d15.jpg', width='200', height='200')
+                        li.li_product_price
+                          span.old_price1
+                          span.new_price1 €159.00
+                          span.saving1
+                        li
+                        li.li_product_desc
+                          .caption
+                            p Lorem Ipsum is simply dummy text of the printing
+                        li.li_product_buy_button
+                          a.btn.btn-default#but(href='cart.html', role='button') Buy Now!
+                          .pull-right
+                            button.btn.btn-primary.wish_button(type='button')
+                              i.fa.fa-heart
+                            button.btn.btn-primary.wish_button(type='button')
+                              i.fa.fa-exchange
+                .product-layout.col-md-4.col-sm-6.col-xs-12
+                  .product-thumb-height
+                    .product-thumb.transition
+                      ul
+                        li.li_product_image
+                          .image
+                            a(href='single-product.html')
+                              img.img-responsive(src='images/d1.jpg', width='200', height='200')
+                        li.li_product_price
+                          span.old_price1
+                          span.new_price1 €134.00
+                          span.saving1
+                        li
+                        li.li_product_desc
+                          .caption
+                            p Lorem Ipsum is simply dummy text of the printing
+                        li.li_product_buy_button
+                          a.btn.btn-default#but(href='cart.html', role='button') Buy Now!
+                          .pull-right
+                            button.btn.btn-primary.wish_button(type='button')
+                              i.fa.fa-heart
+                            button.btn.btn-primary.wish_button(type='button')
+                              i.fa.fa-exchange
+    include common/footer

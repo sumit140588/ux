@@ -1,0 +1,94 @@
+//--slidder start-!
+.contentText
+                  .infoBoxHeading Today Bestsellers
+                  .row
+                    .col-md-12.col-sm-12.col-xs-12
+                      //                                        <div class="bg_best">
+                      .bg_best
+                        .owl-carousel
+                          .item
+                            span
+                              a(href='single-product.html')
+                                img.carasoul_image(src='images/d1.jpg')
+                            a.btn.btn-default(href='cart.html', role='button') Buy Now!
+                          .item
+                            span
+                              a(href='single-product.html')
+                                img.carasoul_image(src='images/img4.jpg')
+                            a.btn.btn-default(href='cart.html', role='button') Buy Now!
+                          .item
+                            span
+                              a(href='single-product.html')
+                                img.carasoul_image(src='images/img6.jpg')
+                            a.btn.btn-default(href='cart.html', role='button') Buy Now!
+                          .item
+                            span
+                              a(href='single-product.html')
+                                img.carasoul_image(src='images/img13.jpg')
+                            a.btn.btn-default(href='cart.html', role='button') Buy Now!
+                          .item
+                            span
+                              a(href='single-product.html')
+                                img.carasoul_image(src='images/img14.jpg')
+                            a.btn.btn-default(href='cart.html', role='button') Buy Now!
+                          .item
+                            span
+                              a(href='single-product.html')
+                                img.carasoul_image(src='images/img16.jpg')
+                            a.btn.btn-default(href='cart.html', role='button') Buy Now!
+                          .item
+                            span
+                              a(href='single-product.html')
+                                img.carasoul_image(src='images/img15.jpg')
+                            a.btn.btn-default(href='cart.html', role='button') Buy Now!
+                          //                                                                                <div class="item">
+                                                                                                                                        <span>
+                                                                                                                                            <a href="single-product.html">
+                                                                                                                                                <img class="carasoul_image" src="images/d25.jpg">
+                                                                                                                                            </a></span>
+                                                                                                                                        <a class="btn btn-default"  href="cart.html" role="button" >
+                                                                                                                                            Buy Now!
+                                                                                                                                        </a>
+                                                                                                                                    </div>
+                          .item
+                            span
+                              a(href='single-product.html')
+                                img.carasoul_image(src='images/img1.png')
+                            a.btn.btn-default(href='cart.html', role='button') Buy Now!
+                          .item
+                            span
+                              a(href='single-product.html')
+                                img.carasoul_image(src='images/d2.jpg')
+                            a.btn.btn-default(href='cart.html', role='button') Buy Now!
+                          .item
+                            span
+                              a(href='single-product.html')
+                                img.carasoul_image(src='images/d7.jpg')
+                            a.btn.btn-default(href='cart.html', role='button') Buy Now!
+                        script.
+                         $(document).ready(function () {
+                                                        $('.owl-carousel').owlCarousel({
+                                                            loop: true,
+                                                            margin: 10,
+                                                            responsiveClass: true,
+                                                            responsive: {
+                                                                0: {
+                                                                    items: 2,
+                                                                    nav: true
+                                                                },
+                                                                600: {
+                                                                    items: 3,
+                                                                    nav: false
+                                                                },
+                                                                1000: {
+                                                                    items: 5,
+                                                                    nav: true,
+                                                                    loop: false,
+                                                                    margin: 20
+                                                                }
+
+                                                            }
+                                                        })
+                                                    })
+                      //                                    </div>
+//--slidder End-!

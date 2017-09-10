@@ -1,0 +1,316 @@
+doctype html
+html
+  include common/head.pug
+  body
+    include common/header
+    include common/searchbar
+                //                                                  <span class="input-group-addon" style="border-radius: 0px 20px 20px 0; padding: 0 15px">
+                                                                                      <a href="#" style="color:white" id="testt">
+                                                                                          <span class="glyphicon glyphicon-chevron-down"></span>
+                                                                                      </a>
+                                                                                  </span>
+    .main-content
+      .container.checkout
+        .breadcrumbs
+          a(href='home.html')
+            i.fa.fa-home
+          a(href='checkout.html') Checkout
+        h2.text-center.text-uppercase.text-bold checkout
+        hr.small-line
+        #accordion.panel-group.margin-top
+          .panel.panel-default
+            .panel-heading
+              h4.panel-title
+                a.accordion-toggle(data-parent='#accordion', data-toggle='collapse', href='#collapse-checkout-option')
+                  | Step 1: Checkout Options
+                  i.fa.fa-caret-down
+            #collapse-checkout-option.panel-collapse.collapse(aria-expanded='false')
+              .panel-body
+                .row
+                  .col-sm-6
+                    h2 New Customer
+                    p Checkout Options:
+                    .radio
+                      label
+                        input(type='radio', checked='', value='register', name='account')
+                        |  Register Account
+                    .radio
+                      label
+                        input(type='radio', value='guest', name='account')
+                        |  Guest Checkout
+                    p By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.
+                    input.btn.btn-primary#button-account(type='button', data-loading-text='Loading...', value='Continue')
+                  .col-sm-6
+                    h2 Returning Customer
+                    p I am a returning customer
+                    .form-group
+                      label.control-label(for='input-email') E-Mail
+                      input.form-control#input-email(type='text', placeholder='E-Mail', name='email')
+                    .form-group
+                      label.control-label(for='input-password') Password
+                      input.form-control#input-password(type='password', placeholder='Password', name='password')
+                      br
+                      a(href='#') Forgot Password
+                    input.btn.btn-primary#button-login(type='button', data-loading-text='Loading...', value='Login')
+          .panel.panel-default
+            .panel-heading
+              h4.panel-title
+                a.accordion-toggle(data-parent='#accordion', data-toggle='collapse', href='#collapse-payment-address')
+                  | Step 2: Account & Billing Details
+                  i.fa.fa-caret-down
+            .panel-collapse.collapse.in#collapse-payment-address(style='height: auto')
+              .panel-body
+                .row
+                  .col-sm-6
+                    fieldset#account
+                      legend Your Personal Details
+                      .form-group(style='display: none')
+                        label.control-label Customer Group
+                        .radio
+                          label
+                            input(type='radio', checked='', value='1', name='customer_group_id')
+                            |  Default
+                      .form-group.required
+                        label.control-label(for='input-payment-firstname') First Name
+                        input.form-control#input-payment-firstname(type='text', placeholder='First Name', name='firstname')
+                      .form-group.required
+                        label.control-label(for='input-payment-lastname') Last Name
+                        input.form-control#input-payment-lastname(type='text', placeholder='Last Name', name='lastname')
+                      .form-group.required
+                        label.control-label(for='input-payment-email') E-Mail
+                        input.form-control#input-payment-email(type='text', placeholder='E-Mail', name='email')
+                      .form-group.required
+                        label.control-label(for='input-payment-telephone') Telephone
+                        input.form-control#input-payment-telephone(type='text', placeholder='Telephone', name='telephone')
+                      .form-group
+                        label.control-label(for='input-payment-fax') Fax
+                        input.form-control#input-payment-fax(type='text', placeholder='Fax', name='fax')
+                    fieldset
+                      legend Your Password
+                      .form-group.required
+                        label.control-label(for='input-payment-password') Password
+                        input.form-control#input-payment-password(type='password', placeholder='Password', name='password')
+                      .form-group.required
+                        label.control-label(for='input-payment-confirm') Password Confirm
+                        input.form-control#input-payment-confirm(type='password', placeholder='Password Confirm', name='confirm')
+                  .col-sm-6
+                    fieldset#address.required
+                      legend Your Address
+                      .form-group
+                        label.control-label(for='input-payment-company') Company
+                        input.form-control#input-payment-company(type='text', placeholder='Company', name='company')
+                      .form-group.required
+                        label.control-label(for='input-payment-address-1') Address 1
+                        input.form-control#input-payment-address-1(type='text', placeholder='Address 1', name='address_1')
+                      .form-group
+                        label.control-label(for='input-payment-address-2') Address 2
+                        input.form-control#input-payment-address-2(type='text', placeholder='Address 2', name='address_2')
+                      .form-group.required
+                        label.control-label(for='input-payment-city') City
+                        input.form-control#input-payment-city(type='text', placeholder='City', name='city')
+                      .form-group.required
+                        label.control-label(for='input-payment-postcode') Post Code
+                        input.form-control#input-payment-postcode(type='text', placeholder='Post Code', name='postcode')
+                      .form-group.required
+                        label.control-label(for='input-payment-country') Country
+                        select.form-control#input-payment-country(name='country_id')
+                          option(value='') --- Please Select ---
+                          option(value='1') Afghanistan
+                          option(value='2') Albania
+                          option(value='3') Algeria
+                          option(value='4') American Samoa
+                          option(value='5') Andorra
+                          option(value='6') Angola
+                          option(value='7') Anguilla
+                      .form-group.required
+                        label.control-label(for='input-payment-zone') Region / State
+                        select.form-control#input-payment-zone(name='zone_id')
+                          option(value='') --- Please Select ---
+                          option(value='3513') Aberdeen
+                          option(value='3514') Aberdeenshire
+                          option(value='3515') Anglesey
+                          option(value='3516') Angus
+                          option(value='3517') Argyll and Bute
+                          option(value='3518') Bedfordshire
+                          option(value='3519') Berkshire
+                          option(value='3520') Blaenau Gwent
+                          option(value='3521') Bridgend
+                .checkbox
+                  label(for='newsletter')
+                    input#newsletter(type='checkbox', value='1', name='newsletter')
+                    |  I wish to subscribe to the PrintStore online store newsletter.
+                .checkbox
+                  label
+                    input(type='checkbox', checked='', value='1', name='shipping_address')
+                    |  My delivery and billing addresses are the same.
+                .buttons.clearfix
+                  .pull-right
+                    | I have read and agree to the
+                    a.agree(href='#')
+                      b Privacy Policy
+                    |   
+                    input(type='checkbox', value='1', name='agree', style='vertical-align: text-bottom')
+                    |  
+                    input.btn.btn-primary#button-register(type='button', data-loading-text='Loading...', value='Continue')
+          .panel.panel-default
+            .panel-heading
+              h4.panel-title
+                a.accordion-toggle(data-parent='#accordion', data-toggle='collapse', href='#collapse-shipping-address', aria-expanded='true')
+                  | Step 3: Delivery Details
+                  i.fa.fa-caret-down
+            #collapse-shipping-address.panel-collapse.collapse.in(aria-expanded='true')
+              .panel-body
+                form.form-horizontal
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-shipping-firstname') First Name
+                    .col-sm-10
+                      input.form-control#input-shipping-firstname(type='text', placeholder='First Name', value='mm', name='firstname')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-shipping-lastname') Last Name
+                    .col-sm-10
+                      input.form-control#input-shipping-lastname(type='text', placeholder='Last Name', value='mm', name='lastname')
+                  .form-group
+                    label.col-sm-2.control-label(for='input-shipping-company') Company
+                    .col-sm-10
+                      input.form-control#input-shipping-company(type='text', placeholder='Company', name='company')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-shipping-address-1') Address 1
+                    .col-sm-10
+                      input.form-control#input-shipping-address-1(type='text', placeholder='Address 1', value='aaaa', name='address_1')
+                  .form-group
+                    label.col-sm-2.control-label(for='input-shipping-address-2') Address 2
+                    .col-sm-10
+                      input.form-control#input-shipping-address-2(type='text', placeholder='Address 2', name='address_2')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-shipping-city') City
+                    .col-sm-10
+                      input.form-control#input-shipping-city(type='text', placeholder='City', value='aaaaa', name='city')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-shipping-postcode') Post Code
+                    .col-sm-10
+                      input.form-control#input-shipping-postcode(type='text', placeholder='Post Code', value='41523', name='postcode')
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-shipping-country') Country
+                    .col-sm-10
+                      select.form-control#input-shipping-country(name='country_id')
+                        option(value='') --- Please Select ---
+                        option(value='244') Aaland Islands
+                        option(value='1') Afghanistan
+                        option(value='2') Albania
+                        option(value='3') Algeria
+                        option(value='4') American Samoa
+                        option(value='5') Andorra
+                        option(value='6') Angola
+                  .form-group.required
+                    label.col-sm-2.control-label(for='input-shipping-zone') Region / State
+                    .col-sm-10
+                      select.form-control#input-shipping-zone(name='zone_id')
+                        option(value='') --- Please Select ---
+                        option(value='3513') Aberdeen
+                        option(value='3514') Aberdeenshire
+                        option(value='3515') Anglesey
+                        option(value='3516') Angus
+                        option(value='3517') Argyll and Bute
+                  .buttons
+                    .pull-right
+                      input.btn.btn-primary#button-guest-shipping(type='button', value='Continue')
+          .panel.panel-default
+            .panel-heading
+              h4.panel-title
+                a.accordion-toggle(data-parent='#accordion', data-toggle='collapse', href='#collapse-shipping-method')
+                  | Step 4: Delivery Method
+                  i.fa.fa-caret-down
+            #collapse-shipping-method.panel-collapse.collapse.in(aria-expanded='true')
+              .panel-body
+                p Please select the preferred shipping method to use on this order.
+                p
+                  strong Flat Rate
+                .radio
+                  label
+                    input(type='radio', checked='', value='flat.flat', name='shipping_method')
+                    |  Flat Shipping Rate - $8.00
+                p
+                  strong Add Comments About Your Order
+                p
+                  textarea.form-control(rows='8', name='comment')
+                .buttons
+                  .pull-right
+                    input.btn.btn-primary#button-shipping-method(type='button', value='Continue')
+          .panel.panel-default
+            .panel-heading
+              h4.panel-title
+                a.accordion-toggle(data-parent='#accordion', data-toggle='collapse', href='#collapse-payment-method', aria-expanded='true')
+                  | Step 5: Payment Method
+                  i.fa.fa-caret-down
+            #collapse-payment-method.panel-collapse.collapse.in(aria-expanded='true')
+              .panel-body
+                p Please select the preferred payment method to use on this order.
+                .radio
+                  label
+                    input(type='radio', checked='', value='cod', name='payment_method')
+                    |  Cash On Delivery
+                p
+                  strong Add Comments About Your Order
+                p
+                  textarea.form-control(rows='8', name='comment')
+                .buttons
+                  .pull-right
+                    | I have read and agree to the
+                    a.agree(href='#')
+                      b Terms & Conditions
+                    input(type='checkbox', value='1', name='agree')
+                    |    
+                    input.btn.btn-primary#button-payment-method(type='button', value='Continue')
+          .panel.panel-default
+            .panel-heading
+              h4.panel-title
+                a.accordion-toggle(data-parent='#accordion', data-toggle='collapse', href='#collapse-checkout-confirm', aria-expanded='true')
+                  | Step 6: Confirm Order
+                  i.fa.fa-caret-down
+            #collapse-checkout-confirm.panel-collapse.collapse.in(aria-expanded='true')
+              .panel-body
+                .table-responsive
+                  table.table.table-bordered.table-hover
+                    thead
+                      tr
+                        td.text-left Product Name
+                        td.text-left Model
+                        td.text-right Quantity
+                        td.text-right Unit Price
+                        td.text-right Total
+                    tbody
+                      tr
+                        td.text-left
+                          a(href='#') demo product
+                        td.text-left Product 6
+                        td.text-right 1
+                        td.text-right $242.00
+                        td.text-right $242.00
+                    tfoot
+                      tr
+                        td.text-right(colspan='4')
+                          strong Sub-Total:
+                        td.text-right $200.00
+                      tr
+                        td.text-right(colspan='4') Coupon Code:
+                        td.text-right $0
+                      tr
+                        td.text-right(colspan='4') Gift Voucher:
+                        td.text-right $0
+                      tr
+                        td.text-right(colspan='4') Flat Shipping Rate:
+                        td.text-right $5.00
+                      tr
+                        td.text-right(colspan='4') Eco Tax (-2.00):
+                        td.text-right $4.00
+                      tr
+                        td.text-right(colspan='4') VAT (20%):
+                        td.text-right $41.00
+                      tr
+                        td.text-right(colspan='4')
+                          strong Order Total:
+                        td.text-right $250.00
+                .buttons
+                  .pull-right
+                    input.btn.btn-primary#button-confirm(type='button', value='Confirm Order')
+    include common/footer

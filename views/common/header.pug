@@ -1,0 +1,126 @@
+.container
+      .row
+        .col-md-4.col-sm-4.col-xs-4#logo
+          a.logo-text(href='home.html')
+            | Medi
+            span(style='color:#39BAF0; font-size:40px') STORE
+        .col-md-2.col-sm-12.col-xs-12#navbar_hide(style='display:none')
+          nav.navbar.navbar-inverse(role='navigation')
+            a.logo-text(href='home.html', style='float: left')
+              | Medi
+              span(style='color:#39BAF0; font-size:40px') STORE
+            #nav
+              .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar', style='background: #8EBE08; border: none; margin-right: 0')
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+              .collapse.navbar-collapse#myNavbar
+                ul.nav.navbar-nav.site_nav_menu1
+                  li.first
+                    a(href='home.html') Home
+                  li
+                    a(href='#') About us
+                  li
+                    a(href='#') Guarantee
+                  li
+                    a(href='#') Disclaimer
+                  li
+                    a(href='#') Shipping & Payment
+                  li
+                    a(href='#') Privacy Policy
+                  li
+                    a(href='#') Terms & Conditions
+                  li
+                    a(href='#') Contact Us
+                  li
+                    a(href='#') Site Map
+        .col-md-4.col-md-offset-4.col-sm-offset-2.col-sm-6.col-xs-12
+          #top_right
+            #cart
+              .text
+                .img
+                  a(href='cart.html')
+                    img.img-responsive(src='images/cart.png', alt='', width='26', height='27')
+                span Your cart:
+                span.cart_total €0.00
+                span.cart_items (0 items)
+            #bottom_right
+              .row
+                .col-md-6.col-xs-6.wd_auto
+                  .left
+                    .login
+                      a.btn.btn-default.reg_button(href='login.html') Login
+                      a.btn.btn-default.reg_button(href='register.html') Signup
+                .dropdown-bn.wd-33.col-md-6.remove_PL.col-xs-6
+                  .row
+                    .pl-0.col-md-6.col-xs-6
+                      .dropdown.btn-group
+                        button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown')
+                          | language
+                          span.caret
+                        ul.dropdown-menu
+                          li
+                            a(href='#') English
+                          li
+                            a(href='#') French
+                          li
+                            a(href='#') German
+                          li
+                            a(href='#') Dutch
+                          li
+                            a(href='#') Swedish
+                          li
+                            a(href='#') Danish
+                          li
+                            a(href='#') Portuguese
+                          li
+                            a(href='#') Finish
+                          li
+                            a(href='#') German
+                          li
+                            a(href='#') Norwegian
+                    .pl_0.col-md-6.col-xs-6
+                      .dropdown.btn-group
+                        button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown')
+                          | currency
+                          span.caret
+                        ul.dropdown-menu
+                          li
+                            a(href='#') U.S. Dollar
+                          li
+                            a(href='#') Euro
+                          li
+                            a(href='#') Pounds Sterling
+.container-fluid.bg-color
+      .row
+        .container
+          .row
+            .col-md-12.col-xs-12
+              nav.navbar.navbar-inverse#nav_show(role='navigation')
+                #nav
+                  .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+                      span.icon-bar
+                      span.icon-bar
+                      span.icon-bar
+                  .collapse.navbar-collapse#myNavbar
+                    ul.nav.navbar-nav.site_nav_menu1
+                      li.first
+                        a(href='home.html') Home
+                      li
+                        a(href='#') About us
+                      li
+                        a(href='#') Guarantee
+                      li
+                        a(href='#') Disclaimer
+                      li
+                        a(href='#') Shipping & Payment
+                      li
+                        a(href='#') Privacy Policy
+                      li
+                        a(href='#') Terms & Conditions
+                      li
+                        a(href='#') Contact Us
+                      li
+                        a(href='#') Site Map

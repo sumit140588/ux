@@ -1,0 +1,291 @@
+doctype html
+html
+  include common/head.pug
+  body
+    include common/header
+    include common/searchbar
+    #site_content
+      .container
+        .row
+          .col-md-3.col-sm-4.col-xs-12.left_sidebar1
+            #left_part
+              .bs-example
+                .panel-group#accordion
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne') Categories
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-down.pull-right
+                    #collapseOne.panel-collapse.collapse.in
+                      .panel-body
+                        .infoBoxContents
+                          a(href='product.html') Category One
+                          |  (94)
+                          br
+                          a(href='product.html') Category Two
+                          |  (9)
+                          br
+                          a(href='product.html') Category Three
+                          |  (5)
+                          br
+                          a(href='product.html') Category Four
+                          |  (6)
+                          br
+                          a(href='product.html') Category Five
+                          |  (94)
+                          br
+                          a(href='product.html') Category Six
+                          |  (94)
+                          br
+                          a(href='product.html') Category Seven
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo') What's New?
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right.accordan_plus
+                    #collapseTwo.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContainer
+                          .infoBoxHeading
+                            a(href='#') What's New?
+                          .infoBoxContents#sidebar
+                            div
+                              a(href='single-product.html')
+                                img.img-responsive(src='images/img1.png')
+                            a(href='single-product.html') Lorem Simply
+                            br
+                            | €21.00
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree') Information
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right
+                    #collapseThree.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContents
+                          a(href='#') Shipping & Returns
+                          br
+                          a(href='#') Privacy Notice
+                          br
+                          a(href='#') Conditions of Use
+                          br
+                          a(href='#') Contact Us
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFour') Bestsellers
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFour')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right
+                    #collapseFour.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContents#sidebar
+                          a(href='single-product.html')
+                            img.img-responsive(src='images/img1.png')
+                          a(href='single-product.html') Lorem Big Block
+                          br
+                          del
+                          span.productSpecialPrice €21.00
+                  .panel.panel-default
+                    .panel-heading
+                      .infoBoxHeading
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFive') Specials
+                        a(data-toggle='collapse', data-parent='#accordion', href='#collapseFive')
+                          i#accordan_plus.indicator.glyphicon.glyphicon-chevron-up.pull-right
+                    #collapseFive.panel-collapse.collapse
+                      .panel-body
+                        .infoBoxContents#sidebar
+                          a(href='single-product.html')
+                            img.img-responsive(src='images/img6.jpg')
+                          a(href='single-product.html') Lorem Big Block
+                          br
+                          del
+                          span.productSpecialPrice €21.00
+            script.
+             function toggleChevron(e) {
+                                $(e.target)
+                                        .prev('.panel-heading')
+                                        .find("i.indicator")
+                                        .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+                            }
+                            $('#accordion').on('hidden.bs.collapse', toggleChevron);
+                            $('#accordion').on('shown.bs.collapse', toggleChevron);
+          .col-md-9.col-sm-8.col-xs-12#content
+            .contentText
+              .breadcrumbs
+                a(href='home.html')
+                  i.fa.fa-home
+                a(href='#') Product
+              h1 Lorem
+              .row
+                .col-sm-2.col-xs-6
+                  img.img-thumbnail(src='images/img15.jpg')
+                .col-sm-10.col-xs-6
+                  p Example of category description text
+              hr
+              h3 Refine Search
+              .row
+                .col-sm-3
+                  ul
+                    li
+                      a(href='#') Ab (0)
+                    li
+                      a(href='#') AB-one (1)
+              p
+                a#compare-total(href='#') Product Compare (0)
+              .row
+                .col-md-4
+                  .btn-group.hidden-xs
+                    a.btn.btn-default#list-view(href='product-list.html')
+                      i.fa.fa-th-list
+                    a.btn.btn-default#grid-view
+                      i.fa.fa-th
+                .col-md-2.text-right.txt-left
+                  label.control-label(for='input-sort', style='margin-top: 7px') Sort By:
+                .col-md-3.text-right
+                  select.form-control#input-sort
+                    option(selected='') Default
+                    option Name (Z - A)
+                .col-md-1.text-right.txt-left
+                  label.control-label(for='input-limit', style='margin-top: 7px') Show:
+                .col-md-2.text-right
+                  select.form-control#input-limit
+                    option(selected='') 15
+                    option 25
+                    option 50
+                    option 75
+              .row.margin-top.product-layout_width
+                .product-layout.product-grid.col-lg-4.col-md-4.col-sm-6.col-xs-12
+                  .product-thumb
+                    .image
+                      a(href='single-product.html')
+                        img.img-responsive(src='images/img16.jpg', width='200', height='200')
+                    div
+                      .caption
+                        h4.product_title
+                          a(href='single-product.html') Lorem small
+                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry....
+                        p.price
+                          span.new_price €110.00
+                          span.old_price €122.00
+                          span.price-tax Ex Tax: €90.00
+                      //<div class="button-group">!
+                      a.btn.book-btn.btn-default.reg_button(href='cart.html') BUY NOW!
+                      .pull-right
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-heart
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-exchange
+                      //</div>!
+                .product-layout.product-grid.col-lg-4.col-md-4.col-sm-6.col-xs-12
+                  .product-thumb
+                    .image
+                      a(href='single-product.html')
+                        img.img-responsive(src='images/img17.jpg', width='200', height='200')
+                    div
+                      .caption
+                        h4.product_title
+                          a(href='single-product.html') Simphny
+                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry....
+                        p.price
+                          span.new_price €81.00
+                          span.price-tax Ex Tax: €90.00
+                      //<div class="button-group">!
+                      a.btn.book-btn.btn-default.reg_button(href='cart.html') BUY NOW!
+                      .pull-right
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-heart
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-exchange
+                      //</div>!
+                .product-layout.product-grid.col-lg-4.col-md-4.col-sm-6.col-xs-12
+                  .product-thumb
+                    .image
+                      a(href='single-product.html')
+                        img.img-responsive(src='images/img4.jpg', width='200', height='200')
+                    div
+                      .caption
+                        h4.product_title
+                          a(href='single-product.html') Lorem block
+                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry....
+                        p.price
+                          span.new_price €81.00
+                          span.price-tax Ex Tax: €90.00
+                      //<div class="button-group">!
+                      a.btn.book-btn.btn-default.reg_button(href='cart.html') BUY NOW!
+                      .pull-right
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-heart
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-exchange
+                      //</div>!
+                .product-layout.product-grid.col-lg-4.col-md-4.col-sm-6.col-xs-12
+                  .product-thumb
+                    .image
+                      a(href='single-product.html')
+                        img.img-responsive(src='images/d21.jpg', width='200', height='200')
+                    div
+                      .caption
+                        h4.product_title
+                          a(href='single-product.html') Officiis phaedrum
+                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry....
+                        p.price
+                          span.new_price €26.00
+                          span.old_price €34.00
+                          span.price-tax Ex Tax: €21.00
+                      //<div class="button-group">!
+                      a.btn.book-btn.btn-default.reg_button(href='cart.html') BUY NOW!
+                      .pull-right
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-heart
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-exchange
+                      //</div>!
+                .product-layout.product-grid.col-lg-4.col-md-4.col-sm-6.col-xs-12
+                  .product-thumb
+                    .image
+                      a(href='single-product.html')
+                        img.img-responsive(src='images/d23.jpg', width='200', height='200')
+                    div
+                      .caption
+                        h4.product_title
+                          a(href='single-product.html') Lorem ipsum dolor
+                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry....
+                        p.price
+                          span.new_price €199.00
+                          span.price-tax Ex Tax: €180.00
+                      //<div class="button-group">!
+                      a.btn.book-btn.book-btn.btn-default.reg_button(href='cart.html') BUY NOW!
+                      .pull-right
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-heart
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-exchange
+                      //</div>!
+                .product-layout.product-grid.col-lg-4.col-md-4.col-sm-6.col-xs-12
+                  .product-thumb
+                    .image
+                      a(href='single-product.html')
+                        img.img-responsive(src='images/d15.jpg', width='200', height='200')
+                    div
+                      .caption
+                        h4.product_title
+                          a(href='single-product.html') Cicero famously
+                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry....
+                        p.price
+                          span.new_price €171.00
+                          span.price-tax Ex Tax: €162.00
+                      //<div class="button-group">!
+                      a.btn.book-btn.btn-default.reg_button(href='cart.html') BUY NOW!
+                      .pull-right
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-heart
+                        button.btn.wish_button.btn-default.reg_button(data-toggle='tooltip', type='button')
+                          i.fa.fa-exchange
+                      //</div>!
+              .row
+                .col-sm-6.text-left
+                .col-sm-6.text-right Showing 1 to 12 of 12 (1 Pages)
+    include common/footer

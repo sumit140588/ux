@@ -7,18 +7,37 @@ app.use(express.static('public'));
 app.set('views','./views');
  app.set('view engine', 'pug');
 var path = require('path');
-
-
+var mongo = require('./mongo.js');
+var account=require('./account.js');
+var bodyParser = require('body-parser')
+var session = require('express-session');
+app.use(session({secret: 'portalSession'}));
+var sess;
+//app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+;
 // This responds with "Hello World" on the homepage
 app.get('/', function (req, res) {
    console.log("Got a GET request for the homepage");
    res.render('index', { title: 'Hey', message: 'Hello there!' })
+   console.log(mongo.insertSampleDoc()); 
+   console.log( mongo.sum(1,2)); 
+  //res.sendFile(path.join(__dirname + '/pages/home.html'));
+})
+app.get('/setup', function (req, res) {
+
+   console.log("Got a GET request for the homepage");
+   res.render('index', { title: 'Hey', message: 'Hello there!' })
+   console.log(mongo.insertSampleDoc()); 
+   console.log( mongo.sum(1,2)); 
   //res.sendFile(path.join(__dirname + '/pages/home.html'));
 })
 app.get('/home.html', function (req, res) {
    console.log("Got a GET request for the homepage");
-  res.sendFile(path.join(__dirname + '/pages/home.html'));
- // res.render('home', { title: 'Hey', message: 'Hello there!' })
+ // res.sendFile(path.join(__dirname + '/pages/home.html'));
+  res.render('home', { title: 'MediaStore', message: 'Hello there!' })
 })
 
 
@@ -36,18 +55,60 @@ app.get('/list_user', function (req, res) {
 })
 
 app.get('/login.html', function (req, res) {
+  sess=req.session;
+  if(sess.email){
+    res.redirect('home.html');
+  }
    console.log("Got a GET request for /login " +path.join(__dirname + '/pages/login.html'));
-	res.sendFile(path.join(__dirname + '/pages/login.html'));
+  
+	//res.sendFile(path.join(__dirname + '/pages/login.html'));
+   res.render('login', { title: 'Login', message: 'Hello there!', page:'Login' })
+
+   
+})
+app.post('/login', function (req, res) {
+   console.log("Got a Post request for /login " +path.join(__dirname + '/pages/login.html')+"kll     "+req.body.email);
+    console.dir(req.body);
+  //res.sendFile(path.join(__dirname + '/pages/home.html'));
+ 
+account.login(req.body.email,req.body.password,function(err,value){
+        if(err===null){
+          console.log("Error Object is null");
+          sess = req.session;
+//In this we are assigning email to sess.email variable.
+//email comes from HTML page.
+  sess.email=req.body.email;
+          res.sendFile(path.join(__dirname + '/pages/home.html'));
+        }else{
+          console.log("Value Object is not null");
+          res.render('login', { title: 'Login', message: 'Hello there!', page:'Login' });
+        }
+});
+
+   
+})
+app.get('/login', function (req, res) {
+   console.log("Got a Post request for /login " +path.join(__dirname + '/pages/login.html'));
+  //res.sendFile(path.join(__dirname + '/pages/login.html'));
+ 
+
    
 })
 app.get('/register.html', function (req, res) {
    console.log("Got a GET request for /login " +path.join(__dirname + '/pages/register.html'));
-	res.sendFile(path.join(__dirname + '/pages/register.html'));
+	//res.sendFile(path.join(__dirname + '/pages/register.html'));
+  res.render('register', { title: 'Register', message: 'Hello there!' })
    
 })
 app.get('/single-product.html', function (req, res) {
    console.log("Got a GET request for /login " +path.join(__dirname + '/pages/register.html'));
   res.sendFile(path.join(__dirname + '/pages/single-product.html'));
+   
+})
+app.get('/product.html', function (req, res) {
+   console.log("Got a GET request for /login " +path.join(__dirname + '/pages/register.html'));
+ // res.sendFile(path.join(__dirname + '/pages/product.html'));
+  res.render('product', { title: 'Register', message: 'Hello there!' })
    
 })
 app.get('/cart.html', function (req, res) {
