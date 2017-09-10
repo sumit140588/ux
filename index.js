@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 ;
 // This responds with "Hello World" on the homepage
+
 app.get('/', function (req, res) {
    console.log("Got a GET request for the homepage");
    res.render('home', { title: 'Hey', message: 'Hello there!' })
@@ -78,10 +79,12 @@ account.login(req.body.email,req.body.password,function(err,value){
 //In this we are assigning email to sess.email variable.
 //email comes from HTML page.
   sess.email=req.body.email;
-          res.sendFile(path.join(__dirname + '/pages/home.html'));
+          //res.sendFile(path.join(__dirname + '/pages/home.html'));
+          res.redirect('home.html');
         }else{
           console.log("Value Object is not null");
-          res.render('login', { title: 'Login', message: 'Hello there!', page:'Login' });
+         // res.render('login', { title: 'Login', message: 'Hello there!', page:'Login' });
+         res.redirect('login.html');
         }
 });
 

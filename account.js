@@ -11,12 +11,13 @@ this.login = function(userIdOrEmailOPhone, password, callback) {
             if (doc.a == userIdOrEmailOPhone) {
                 console.log("success");
                 docObject = doc;
+               // this.exit=true;
             } else {
-                console.log("Failure");
+               // console.log("Failure");
                 
             }
+            
         }
-
         );
         if(null===docObject){
 
