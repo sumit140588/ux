@@ -47,11 +47,17 @@
                 span.cart_items (0 items)
             #bottom_right
               .row
-                .col-md-6.col-xs-6.wd_auto
-                  .left
-                    .login
-                      a.btn.btn-default.reg_button(href='login.html') Login
-                      a.btn.btn-default.reg_button(href='register.html') Signup
+                if user
+                  .col-md-6.col-xs-6.wd_auto
+                    .left
+                      .login
+                        |Welcome #{user}
+                else
+                  .col-md-6.col-xs-6.wd_auto
+                    .left
+                      .login
+                        a.btn.btn-default.reg_button(href='login.html') Login
+                        a.btn.btn-default.reg_button(href='register.html') Signup
                 .dropdown-bn.wd-33.col-md-6.remove_PL.col-xs-6
                   .row
                     .pl-0.col-md-6.col-xs-6

@@ -38,7 +38,7 @@ app.get('/setup', function (req, res) {
 app.get('/home.html', function (req, res) {
    console.log("Got a GET request for the homepage");
  // res.sendFile(path.join(__dirname + '/pages/home.html'));
-  res.render('home', { title: 'MediaStore', message: 'Hello there!' })
+  res.render('home', { title: 'MediaStore', message: 'Hello there!!' ,user:req.session.email})
 })
 
 
@@ -79,6 +79,7 @@ account.login(req.body.email,req.body.password,function(err,value){
 //In this we are assigning email to sess.email variable.
 //email comes from HTML page.
   sess.email=req.body.email;
+
           //res.sendFile(path.join(__dirname + '/pages/home.html'));
           res.redirect('home.html');
         }else{
