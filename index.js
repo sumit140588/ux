@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 // This responds with "Hello World" on the homepage
 app.get('/', function (req, res) {
    console.log("Got a GET request for the homepage");
-   res.render('index', { title: 'Hey', message: 'Hello there!' })
+   res.render('home', { title: 'Hey', message: 'Hello there!' })
    console.log(mongo.insertSampleDoc()); 
    console.log( mongo.sum(1,2)); 
   //res.sendFile(path.join(__dirname + '/pages/home.html'));
