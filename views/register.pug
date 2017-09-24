@@ -28,13 +28,15 @@ html
                 i.fa.fa-home
               a(href='#') Register
             h1 My Account Information
+         
+            include common/errorTemplate
             p
               small
                 strong.define_note
               | If you already have an account with us, please login at the
               a(href='login.html') login page
               | .
-            form.form-horizontal
+            form.form-horizontal(role='registerForm' action='register',method='post')
               .contentText
                 fieldset#account
                   h1 Your Personal Details

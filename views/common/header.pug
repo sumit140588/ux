@@ -51,7 +51,11 @@
                   .col-md-6.col-xs-6.wd_auto
                     .left
                       .login
-                        |Welcome #{user}
+                        |Welcome #{user} 
+                        form.form-horizontal.add_margin( role='form',action='logout',method='post')
+                            button.btn.btn-primary.reg_button(value='Logout', type='submit')
+                              |Logout
+                            
                 else
                   .col-md-6.col-xs-6.wd_auto
                     .left
